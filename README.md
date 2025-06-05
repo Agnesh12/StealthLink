@@ -36,9 +36,9 @@ A Chrome extension that fetches Spotify track links instantly — no need to ope
 
 ## 📷 Screenshots
 
-![Screenshot 1](./src/assets/image1.png)
-![Screenshot 2](./src/assets/image2.png)
-![Screenshot 3](./src/assets/image3.png)
+![Screenshot 1](./image1.png)
+![Screenshot 2](./image2.png)
+![Screenshot 3](./image3.png)
 
 
 ## 🛠️ Tech Stack
