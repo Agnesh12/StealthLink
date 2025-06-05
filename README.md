@@ -65,3 +65,7 @@ A Chrome extension that fetches Spotify track links instantly — no need to ope
 
 ## 📂 Folder Structure
 
+
+Live Demo
+
+stealthlin.netlify.app
