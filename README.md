@@ -1,12 +1,67 @@
-# React + Vite
+# 🎧 Stealth Link
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Fast. Quiet. Simple.**  
+A Chrome extension that fetches Spotify track links instantly — no need to open the app or search manually.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔍 **Quick Search**: Type a song name and get the Spotify link instantly.
+- 📋 **One-Click Copy**: Click to copy the link to your clipboard.
+- 🎯 **Lightweight & Fast**: Built for speed with a sleek interface.
+- 🔐 **Secure**: Uses Spotify’s official Web API for reliable results.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📸 Demo
+
+# 🎧 Stealth Link
+
+**Fast. Quiet. Simple.**  
+A Chrome extension that fetches Spotify track links instantly — no need to open the app or search manually.
+
+---
+
+## 🚀 Features
+
+- 🔍 **Quick Search**: Type a song name and get the Spotify link instantly.
+- 📋 **One-Click Copy**: Click to copy the link to your clipboard.
+- 🎯 **Lightweight & Fast**: Built for speed with a sleek interface.
+- 🔐 **Secure**: Uses Spotify’s official Web API for reliable results.
+
+---
+
+## 📸 Demo
+
+## 📷 Screenshots
+
+![Screenshot 1](./src/assets/image1.png)
+![Screenshot 2](./src/assets/image2.png)
+![Screenshot 3](./src/assets/image3.png)
+
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React + Tailwind CSS
+- **API**: Spotify Web API
+- **Build Tool**: Vite
+- **Browser APIs**: Chrome Extension Manifest V3
+
+---
+
+## 📂 Folder Structure
+
+
+
+## 🛠️ Tech Stack
+
+- **Frontend**: React + Tailwind CSS
+- **API**: Spotify Web API
+- **Build Tool**: Vite
+- **Browser APIs**: Chrome Extension Manifest V3
+
+---
+
+## 📂 Folder Structure
+
