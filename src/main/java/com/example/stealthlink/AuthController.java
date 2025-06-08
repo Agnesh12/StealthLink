@@ -1,9 +1,13 @@
 package com.example.stealthlink;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
@@ -16,27 +20,23 @@ import java.util.concurrent.atomic.AtomicReference;
 @CrossOrigin(origins = "*")
 public class AuthController {
 
-    private final String clientId = "55ed4a85d47446cabf495312bc6621c1";
-    private final String clientSecret = "ec8e6dde569a49beb1cdf9fa06a0ae3b";
+    @Value("${spotify.client-id}")
+    private String clientId;
 
-    // WebClient for Spotify API calls
+    @Value("${spotify.client-secret}")
+    private String clientSecret;
+
     private final WebClient apiWebClient = WebClient.builder()
             .baseUrl("https://api.spotify.com")
             .build();
 
-    // Separate WebClient for Spotify Accounts (auth) calls
     private final WebClient authWebClient = WebClient.builder()
             .baseUrl("https://accounts.spotify.com")
             .build();
 
-    // AtomicReference to store cached token
     private final AtomicReference<String> cachedToken = new AtomicReference<>(null);
-    // Token expiration time (Instant)
     private Instant tokenExpiry = Instant.EPOCH;
 
-    /**
-     * Get valid access token, either cached or by requesting new one
-     */
     private Mono<String> getAccessToken() {
         if (cachedToken.get() != null && Instant.now().isBefore(tokenExpiry)) {
             return Mono.just(cachedToken.get());
@@ -56,14 +56,11 @@ public class AuthController {
                     String token = (String) tokenResponse.get("access_token");
                     Integer expiresIn = (Integer) tokenResponse.get("expires_in");
                     cachedToken.set(token);
-                    tokenExpiry = Instant.now().plusSeconds(expiresIn - 60); // refresh 1 min early
+                    tokenExpiry = Instant.now().plusSeconds(expiresIn - 60);
                     return token;
                 });
     }
 
-    /**
-     * Endpoint to search track by name
-     */
     @GetMapping("/search")
     public Mono<ResponseEntity<String>> searchTrack(@RequestParam String name) {
         return getAccessToken()
